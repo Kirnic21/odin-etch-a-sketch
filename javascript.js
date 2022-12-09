@@ -1,4 +1,10 @@
 const container = document.getElementById("container");
+const size = document.getElementById("botao")
+size.addEventListener('onclick',function(){
+  gridSize = prompt("what is the size of the grid?")
+
+  }
+})
 
 function makeRows(rows, cols) {
   //setting 
@@ -8,7 +14,9 @@ function makeRows(rows, cols) {
     let cell = document.createElement("div");
     cell.innerText = ("");
     container.appendChild(cell).className = "grid-item";
-  };
-};
-
-makeRows(12, 12);
+  }
+}
+makeRows(100,100)
+document.querySelector("div").addEventListener('mouseover', function (e) {
+  e.target.style.background = 'blue';
+});
