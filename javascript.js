@@ -1,11 +1,18 @@
 const container = document.getElementById("container");
-const size = document.getElementById("botao")
-size.addEventListener('onclick',function(){
-  gridSize = prompt("what is the size of the grid?")
-
+const btn = document.querySelector('#botao');
+btn.addEventListener('click',gridSize)
+  function gridSize(){
+    let size = prompt("what is the size(max 100)")
+    if (size>=100 || size <0)
+    {
+      alert('fuck you, insert a valid value')
+    }
+    else
+    {
+    makeRows(size,size)
+    }
   }
-})
-
+  ;
 function makeRows(rows, cols) {
   //setting 
   container.style.setProperty('--grid-rows', rows);
@@ -16,7 +23,6 @@ function makeRows(rows, cols) {
     container.appendChild(cell).className = "grid-item";
   }
 }
-makeRows(100,100)
 document.querySelector("div").addEventListener('mouseover', function (e) {
   e.target.style.background = 'blue';
 });
