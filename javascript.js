@@ -2,12 +2,15 @@ const container = document.getElementById("container");
 const btn = document.querySelector('#botao');
 btn.addEventListener('click',gridSize)
   function gridSize(){
+
     let size = prompt("what is the size(max 100)")
+    //making sure the user inputs a valuid number
     if (size>=100 || size <0)
     {
       alert('fuck you, insert a valid value')
     }
     else
+    //call function that create the grid
     {
     makeRows(size,size)
     }
